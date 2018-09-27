@@ -1,0 +1,35 @@
+global-styling:
+  css:
+    theme: {}
+  js:
+    dist/drupalTranslations.js
+  dependencies:
+    - core/modernizr
+    - core/Drupal
+    - core/drupalSettings
+    - core/drupalTranslations
+
+#
+# Global
+#
+global-build:
+  css:
+    theme:
+      dist/css/global.css: { minified: true, preprocess: false }
+  js:
+    dist/global.js: { minified: true, preprocess: false, scope: footer }
+
+global-dev:
+  js:
+    http://localhost:9000/themes/mytheme/global.js: { type: external, minified: true, preprocess: false }
+
+#
+# Gallery
+#
+gallery-build:
+  js:
+    dist/gallery.js: { minified: true, preprocess: false, scope: footer }
+
+gallery-dev:
+  js:
+    http://localhost:9000/themes/mytheme/gallery.js: { type: external, minified: true, preprocess: false }

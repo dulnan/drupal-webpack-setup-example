@@ -1,0 +1,11 @@
+<?php
+
+function mytheme_preprocess_page(&$variables) {
+  $environment = getenv_default('ENV', 'local');
+
+  if ($environment === 'local') {
+    $variables['#attached']['library'][] = 'mytheme/global-dev';
+  } else {
+    $variables['#attached']['library'][] = 'mytheme/global-build';
+  }
+}
